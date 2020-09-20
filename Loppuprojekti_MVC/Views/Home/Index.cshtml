@@ -3,38 +3,24 @@
     ViewData["Title"] = "Home Page";
 }
 
-@*<div class="text-center">*@
 <div style="background:transparent !important" class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">Welcome to Endangered Planet</h1>
         <p class="lead">Your one-stop shop for scientific species information</p>
-        <p class="lead">Data is loaded from IUCN RedList -REST API: <i>IUCN 2020. IUCN Red List of Threatened Species. Version 2020-2</i> <www.iucnredlist.org></p>
-        
     </div>
 </div>
 
-<div>
-    <p>
-
-    </p>
-</div>
-@*TODO: Search with common name*@
 @using (Html.BeginForm("searchTerms", "Species", "SingleSpecies", FormMethod.Get))
 {
-    <input type="text" name="searchTerms" placeholder="Scientific name" />
-
-    <input type="submit" name="Search" value="Search" id="searchTerms" />
+    <div class="row" style="position:center;">
+        <input type="text" style="width:100%;"
+               name="searchTerms" placeholder="Search with Scientific name" aria-label="Search with Scientific name" />
+        <br />
+        <input style="position:relative;" type="submit" name="Search" value="Search" id="searchTerms" />
+    </div>
+    <br />
 }
-<div>
-    <p>
 
-    </p>
-</div>
-<div>
-    <p>
-
-    </p>
-</div>
 <div id="Top10" class="carousel slide" data-ride="carousel" data-interval="2500" data-pause="hover">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -138,37 +124,4 @@
     </a>
 </div>
 
-<div>
-    <p>
-
-    </p>
-</div>
-<div>
-    <p>
-
-    </p>
-</div>
-<div>
-    <p>
-
-    </p>
-</div>
-<div>
-    <p>
-
-    </p>
-</div>
-<br />
-<br />
-<br />
-
-@*<div>Data is loaded from IUCN RedList -REST API: <i>IUCN 2018. IUCN Red List of Threatened Species. Version 2018-2</i> <www.iucnredlist.org></div>*@
-<br />
-@*<ul class="list-group">
-        <li class="list-group-item"><a href="https://www.iucnredlist.org/">IUCN RED LIST website</a></li>
-        <li class="list-group-item"><a href="https://www.gbif.org/">Global Biodiversity Information Facility - Free and open Access Biodiversity Data</a></li>
-        <li class="list-group-item"><a href="http://www.sciname.info/">SciName Finder</a></li>
-        <li class="list-group-item"><a href="https://laji.fi/">Suomen lajitietokeskus </a></li>
-        <li class="list-group-item"><a href="http://www.luomus.fi/fi">Luonnontieteellinen keskusmuseo</a></li>
-    </ul>*@
 
