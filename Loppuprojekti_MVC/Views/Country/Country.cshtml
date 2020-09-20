@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Loppuprojekti_MVC.Models.CountrySpecies>
+@*@model IEnumerable<Loppuprojekti_MVC.Models.CountryList>*@
+
+@{
+    ViewData["Title"] = "Country";
+    ViewBag.Title = "Categories";
+    string cats = ViewBag.Categories;
+}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">List of all threatened species in @ViewBag.C</h1>
+        <p class="lead">Includes categories Extinct, Extinct in the Wild, Endangered, Critically Endangered, and Vulnerable</p>
+        <p class="lead"><a href="javascript:void(0);" onclick="history.go(-1);">Back</a></p>
+    </div>
+</div>
+
+@if (!string.IsNullOrEmpty(cats))
+{
+    foreach (var c in cats)
+    {
+        @Html.ActionLink(c.ToString().ToUpper(), "Country", new { country = c.ToString() })
+
+        @: &nbsp;
+    }
+}
+
+@*<h1>List of all threatened species in @ViewBag.C</h1>*@
+
+
+@Html.ActionLink("Extinct", "EXSpecies", "Country", new { country = ViewBag.RI }) |
+@Html.ActionLink("Extinct in the wild", "EWSpecies", "Country", new { country = ViewBag.RI }) |
+@Html.ActionLink("Critically Endangered", "CRSpecies", "Country", new { country = ViewBag.RI }) |
+@Html.ActionLink("Endangered", "ENSpecies", "Country", new { country = ViewBag.RI }) |
+@Html.ActionLink("Vulnerable", "VUSpecies", "Country", new { country = ViewBag.RI })
+<br />
+@*@foreach (var item in en)
+    {
+    @Html.ActionLink("Endangered", "ENSpecies", new { country = item.ToString() })
+    }*@
+&nbsp;
+<br />
+
+@foreach (var s in Model)
+{
+
+    @*@Html.DisplayFor(model => model.MainCommonName) - dafuq do we refer to another model??*@
+
+    @*<partial name="_CommonNamePartial" model="s.ScientificName" />*@
+    @*@await Html.PartialAsync("_CommonNamePartial", s)*@
+
+    <ul>
+        @Html.ActionLink(s.ScientificName, "SingleSpecies", "Species", new { searchTerms = s.ScientificName })
+    </ul>
+
+    @*@Html.ActionLink(s.CommonName, "SingleSpecies", "Species", new { searchTerms = s.ScientificName })*@
+
+
+
+}
+

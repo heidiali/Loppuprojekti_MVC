@@ -1,0 +1,103 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+a.navbar-brand {
+    /*background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));*/
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+body {
+
+    background-image: linear-gradient(white, grey);
+     /*Margin: bottom by footer height*/ 
+    /*background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: white;
+    margin-bottom: 60px;
+}
+
+h1, h2{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    top:auto;
+    border-top-style:hidden;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+/* Search bar styles
+-------------------------------------------------- */
+.add-on .input-group-btn > .btn {
+    border-left-width: 0;
+    left: -2px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+/* stop the glowing blue shadow */
+.add-on .form-control:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-color: #cccccc;
+}
+
+.form-control {
+    width: 20%
+}
+
+.navbar-nav > li > a {
+    border-right: 1px solid #ddd;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.navbar-nav:last-child {
+    border-right: 0
+}

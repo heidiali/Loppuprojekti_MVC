@@ -1,0 +1,57 @@
+﻿@model Loppuprojekti_MVC.Models.IndividualSpeciesViewModel
+
+@using Loppuprojekti_MVC.Models;
+
+@{
+    ViewData["Title"] = "SingleSpecies";
+}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">@Html.DisplayFor(model => model.Species.ScientificName)</h1>
+        <h2 class="lead">@Html.DisplayFor(model => model.Species.MainCommonName)</h2>
+    </div>
+</div>
+
+<div>
+    @*<h1>@Html.DisplayFor(model => model.Species.ScientificName)</h1>
+    <h3>@Html.DisplayFor(model => model.Species.MainCommonName)</h3>*@
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Population trend</th>
+                <th scope="col">System</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Species.Category) : @Html.DisplayFor(model => model.Species.Category)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => model.Species.PopulationTrend)
+                </td>
+                <td> @Html.DisplayNameFor(model => model.Species.MarineSystem) @Html.DisplayFor(model => model.Species.MarineSystem)</td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>@Html.DisplayNameFor(model => model.Species.FreshwaterSystem) @Html.DisplayFor(model => model.Species.FreshwaterSystem)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>@Html.DisplayNameFor(model => model.Species.TerrestrialSystem) @Html.DisplayFor(model => model.Species.TerrestrialSystem)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+@await Html.PartialAsync("_Link", Model.Link)
+
+@*<p>PartialView to Narrative</p>*@
+@await Html.PartialAsync("_SingleNarrative", Model.Narrative)
+

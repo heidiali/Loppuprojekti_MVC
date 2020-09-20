@@ -1,0 +1,12 @@
+﻿@model Loppuprojekti_MVC.Models.Link
+
+@using Loppuprojekti_MVC.Models;
+
+@{
+    ViewData["Title"] = "IUCNurl";
+}
+
+<div>
+    @*<p><b>IUCN website for species:</b> @Html.DisplayFor(model => model.Rlurl)</p>*@
+    <p><b>IUCN website for species:</b> <a href="@Model.Rlurl" target="_blank">@Model.Rlurl</a>
+</div>

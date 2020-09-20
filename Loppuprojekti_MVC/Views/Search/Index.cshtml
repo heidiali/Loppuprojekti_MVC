@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Search</h1>
+    </div>
+</div>
+
+
+
+@*TODO: Search with common name*@
+@using (Html.BeginForm("searchTerms", "Species", "SingleSpecies", FormMethod.Get))
+{
+    <input type="text" name="searchTerms" placeholder="Scientific name" />
+    @*<h4>Common name:</h4>
+        <input type="text" name="MainCommonName" />*@
+    <input type="submit" name="Search" value="Search" id="searchTerms" />
+}
+

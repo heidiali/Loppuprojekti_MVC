@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Loppuprojekti_MVC.Models.SpeciesCategory>
+
+@using Loppuprojekti_MVC.Models;
+
+@{
+    ViewData["Title"] = "SCategory";
+    ViewBag.Title = "SCategory";
+}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Species in category @ViewBag.SC</h1>
+        <p class="lead"></p>
+    </div>
+</div>
+
+
+@*<h1>Species in category</h1>*@
+
+@foreach (var s in Model)
+{
+    @*<ul><i>@s.ScientificName</i>, classified as @s.Category</ul>*@
+
+    <ul>
+        <i> @Html.ActionLink(s.ScientificName, "SingleSpecies", "Species", new { searchTerms = s.ScientificName }) </i>
+    </ul>
+}
