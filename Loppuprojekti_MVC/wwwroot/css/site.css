@@ -45,14 +45,13 @@ html {
 
 
 body {
-
-    background-image: linear-gradient(white, grey);
-     /*Margin: bottom by footer height*/ 
+    background-color: whitesmoke ;
+    /*background-image: linear-gradient(white, grey);*/
+    /*Margin: bottom by footer height*/
     /*background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));*/
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-color: white;
     margin-bottom: 60px;
 }
 

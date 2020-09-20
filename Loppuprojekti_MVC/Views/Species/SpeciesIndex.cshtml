@@ -5,14 +5,8 @@
 @{
     ViewData["Title"] = "SpeciesIndex";
 }
-<head>
-    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">*@
-    <link href="~/Content/Bootstrap-3.3.7/bootstrap.css" rel="stylesheet" />
-    <script src="~/Scripts/Bootstrap-3.3.7/bootstrap.js"></script>
-    @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">*@
-</head>
 
-<div class="jumbotron jumbotron-fluid">
+<div style="background:transparent !important" class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">All threatened species</h1>
         <p class="lead">EX: Extinct  |  EW: Extinct in the Wild  |  EN: Endangered  |  CR: Critically Endangered  |  VU: Vulnerable</p>
@@ -22,63 +16,49 @@
 @*<h1>All threatened Species: </h1>*@
 
 @*<p>A JavaScript script is needed for the dropdown to work. Change in state etc. Also check that the parameter is passed down okay..</p>
-@using (Html.BeginForm("searchTerms", "Species", "SCategory", FormMethod.Get))
-{
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Categories
-        </button>
-        <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" role="menuitem" name="searchTerms" id="searchTerms" value="NT">Near Threatened</a>
-            <a class="dropdown-item" role="menuitem" name="searchTerms" id="searchTerms" value="VU" href="#">Vulnerable</a>
-            <a class="dropdown-item" role="menuitem" name="searchTerms" id="searchTerms" value="EN" href="#">Endangered</a>
-            <a class="dropdown-item" role="menuitem" name="searchTerms" id="searchTerms" value="CR" href="#">Critically Endangered</a>
-            <a class="dropdown-item" role="menuitem" name="searchTerms" id="searchTerms" value="EW" href="#">Extinct in The Wild</a>
-            <a class="dropdown-item" role="menuitem" name="searchTerms" id="searchTerms" value="EX" href="#">Extinct</a>
+    @using (Html.BeginForm("searchTerms", "Species", "SCategory", FormMethod.Get))
+    {
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categories
+            </button>
+            <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" role="menuitem" name="searchTerms" id="searchTerms" value="NT">Near Threatened</a>
+                <a class="dropdown-item" role="menuitem" name="searchTerms" id="searchTerms" value="VU" href="#">Vulnerable</a>
+                <a class="dropdown-item" role="menuitem" name="searchTerms" id="searchTerms" value="EN" href="#">Endangered</a>
+                <a class="dropdown-item" role="menuitem" name="searchTerms" id="searchTerms" value="CR" href="#">Critically Endangered</a>
+                <a class="dropdown-item" role="menuitem" name="searchTerms" id="searchTerms" value="EW" href="#">Extinct in The Wild</a>
+                <a class="dropdown-item" role="menuitem" name="searchTerms" id="searchTerms" value="EX" href="#">Extinct</a>
+            </div>
+            <input type="submit" name="Search" id="searchTerms" value="Search" />
         </div>
-        <input type="submit" name="Search" id="searchTerms" value="Search" />
-    </div>
-}*@
+    }*@
 
 <br />
 
 @using (Html.BeginForm("searchTerms", "Species", "SCategory", FormMethod.Get))
 {
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary">
-        <input type="radio" name="searchTerms" id="EX" value="EX" autocomplete="off"> Extinct
-    </label>
-    <label class="btn btn-secondary">
-        <input type="radio" name="searchTerms" id="EW" value="EW" autocomplete="off"> Extinct in The Wild
-    </label>
-    <label class="btn btn-secondary">
-        <input type="radio" name="searchTerms" id="EN" value="EN" autocomplete="off"> Endangered
-    </label>
-    <label class="btn btn-secondary">
-        <input type="radio" name="searchTerms" id="CR" value="CR" autocomplete="off"> Critically Endangered
-    </label>
-    <label class="btn btn-secondary">
-        <input type="submit" name="searchTerms" id="VU" value="VU" autocomplete="off" checked> Vulnerable
-    </label>
-    
-</div>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-outline-dark">
+            <input type="radio" name="searchTerms" id="EX" value="EX" autocomplete="off"> Extinct
+        </label>
+        <label class="btn btn-outline-dark">
+            <input type="radio" name="searchTerms" id="EW" value="EW" autocomplete="off"> Extinct in The Wild
+        </label>
+        <label class="btn btn-outline-dark">
+            <input type="radio" name="searchTerms" id="EN" value="EN" autocomplete="off"> Endangered
+        </label>
+        <label class="btn btn-outline-dark">
+            <input type="radio" name="searchTerms" id="CR" value="CR" autocomplete="off"> Critically Endangered
+        </label>
+        <label class="btn btn-outline-dark">
+            <input type="submit" name="searchTerms" id="VU" value="VU" autocomplete="off"> Vulnerable
+        </label>
+
+    </div>
     <br />
-
     <input type="submit" name="Search" id="searchTerms" value="Search" />
-    @*<label class="btn btn-secondary">
-            <input type="radio" name="searchTerms" id="NE" value="NE" autocomplete="off" checked> Not evaluated
-        </label>
-        <label class="btn btn-secondary">
-            <input type="radio" name="searchTerms" id="DD" value="DD" autocomplete="off" checked> Data Deficient
-        </label>
-        <label class="btn btn-secondary">
-            <input type="radio" name="searchTerms" id="LC" value="LC" autocomplete="off" checked> Least Concern
-        </label>
-        <label class="btn btn-secondary">
-            <input type="radio" name="searchTerms" id="NT" value="NT" autocomplete="off" checked> Near Threatened
-        </label>*@
 }
-
 
 
 @foreach (var s in Model)
@@ -94,11 +74,7 @@
 }
 
 
-
 <div>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     <a asp-action="Index">Back to List</a>
 </div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

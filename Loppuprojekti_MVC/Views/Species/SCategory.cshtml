@@ -6,15 +6,12 @@
     ViewData["Title"] = "SCategory";
     ViewBag.Title = "SCategory";
 }
-<div class="jumbotron jumbotron-fluid">
+<div style="background:transparent !important" class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">Species in category @ViewBag.SC</h1>
         <p class="lead"></p>
     </div>
 </div>
-
-
-@*<h1>Species in category</h1>*@
 
 @foreach (var s in Model)
 {
