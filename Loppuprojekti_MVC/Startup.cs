@@ -39,9 +39,6 @@ namespace Loppuprojekti_MVC
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            // HERE WE NEED SOMETHING ELSE THAT POINTS TO THE API
-            services.AddDbContext<Loppuprojekti_MVCContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("Loppuprojekti_MVCContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
