@@ -13,7 +13,6 @@ namespace Loppuprojekti_MVC.Models
         {
         }
 
-        public DbSet<Loppuprojekti_MVC.Models.Animal> Animal { get; set; }
         public DbSet<Loppuprojekti_MVC.Models.Species> Species { get; set; }
     }
 }

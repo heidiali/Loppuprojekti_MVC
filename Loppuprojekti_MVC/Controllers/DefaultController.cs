@@ -20,9 +20,6 @@ namespace Loppuprojekti_MVC.Controllers
             ViewData["ID"] = ID;
             return View();
         }
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+
     }
 }
