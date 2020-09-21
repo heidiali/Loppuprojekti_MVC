@@ -61,7 +61,8 @@ namespace Loppuprojekti_MVC.Models
         {
             string json = "";
 
-            using (StreamReader sr = new StreamReader(@"C:\Users\Annukka\academy\Loppuprojekti\CountryAPi\" + isoCode + ".txt"))
+            //TODO: Lisää .txt tiedosto projektiin mistä lukee, tai vastaavasti json tiedosto.
+            using (StreamReader sr = new StreamReader(@"C:\Users\HeidiA\Desktop\GitHub projects\CountryApi\" + isoCode + ".txt"))
             {
                 CountryList cl = new CountryList();
                 json = sr.ReadToEnd();

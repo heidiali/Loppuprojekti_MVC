@@ -24,7 +24,8 @@ namespace Loppuprojekti_MVC.Controllers
             return View(ctrs);
         }
 
-        public ActionResult Country(string country) // the parameter needed to use string interpolation in CountryUtil
+        // the parameter needed to use string interpolation in CountryUtil
+        public ActionResult Country(string country) 
         {
             RegionInfo myRI = new RegionInfo(country);
             CountryUtil cu = new CountryUtil();
