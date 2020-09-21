@@ -14,6 +14,8 @@ namespace Loppuprojekti_MVC.Models
     /// </summary>
     public class CountryUtil
     {
+        //TODO: Very heavy and slow, several queries need to be made.
+        //TODO: Better to download it to App_Data from which it's easier to access
         public List<CountryList> Countries()
         {
             string json = "";
@@ -36,7 +38,8 @@ namespace Loppuprojekti_MVC.Models
 
             }
         }
-        // edit needed below to get data from local storage 
+
+        // TODO: IUCN API responds very slowly. For website purposes, better to have upload in local storage in local storage 
         //public List<CountrySpecies> Country(string isoCode) // parameter needed for the var response url below
         //{
         //    string json = "";
@@ -57,11 +60,11 @@ namespace Loppuprojekti_MVC.Models
         //    }
         //}
 
-        public List<CountrySpecies> Country(string isoCode) // parameter needed for the var response url below
+        //TODO: Lisää .txt tiedosto projektiin mistä lukee, tai vastaavasti json tiedosto.
+        public List<CountrySpecies> Country(string isoCode)
         {
             string json = "";
 
-            //TODO: Lisää .txt tiedosto projektiin mistä lukee, tai vastaavasti json tiedosto.
             using (StreamReader sr = new StreamReader(@"C:\Users\HeidiA\Desktop\GitHub projects\CountryApi\" + isoCode + ".txt"))
             {
                 CountryList cl = new CountryList();

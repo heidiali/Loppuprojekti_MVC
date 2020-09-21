@@ -13,7 +13,9 @@ namespace Loppuprojekti_MVC.Controllers
     public class CountryController : Controller
     {
         private CountryUtil ct = new CountryUtil();
-        // GET: Countries
+
+        //TODO: Change name to Index, also correct all references elsewhere..
+        // GET: Country/CountryIndex
         public ActionResult CountryIndex(string firstLetter = "a")
         {
             CultureInfo cultureInfo = new CultureInfo("fi-FI");
@@ -24,25 +26,20 @@ namespace Loppuprojekti_MVC.Controllers
             return View(ctrs);
         }
 
-        // the parameter needed to use string interpolation in CountryUtil
         public ActionResult Country(string country) 
         {
             RegionInfo myRI = new RegionInfo(country);
             CountryUtil cu = new CountryUtil();
             IndividualSpecies ind = new IndividualSpecies();
             var countryspecies = cu.Country(country);
-            //var endangeredSpecies = cu.Country(country).Where(c => c.Category == "EN");
-            //var extinctSpecies = cu.Country(country).Where(c => c.Category == "EX");
-            //var extinctWildSpecies = cu.Country(country).Where(c => c.Category == "EW");
-            //var criticallyEndangeredSpecies = cu.Country(country).Where(c => c.Category == "CR");
-            //var vulnerableSpecies = cu.Country(country).Where(c => c.Category == "VU");
             var allThreatenedSpecies = cu.Country(country).Where(c => c.Category == "EN" || c.Category == "EX" || c.Category == "EW"
             || c.Category == "CR" || c.Category == "VU");
-            ViewBag.C = myRI.EnglishName; // Annukka is PROUD of this bit :)
+            ViewBag.C = myRI.EnglishName;
             ViewBag.RI = myRI;
             ViewBag.Categories = string.Join("", ind.Category);
             RestUtil ru = new RestUtil();
 
+            //TODO: Upload common names to a json from which to query
             //foreach (var item in allThreatenedSpecies)
             //{
             //    //string name = ru.SingleSpecies(item.ScientificName).FirstOrDefault()?.MainCommonName;
@@ -51,9 +48,9 @@ namespace Loppuprojekti_MVC.Controllers
             //}
 
             return View(allThreatenedSpecies); // check what we actually want here!!
-            //return View(countryspecies);
-
         }
+
+        //TODO: Combine these methods & their Views, unnessary code doubling. 
 
         public ActionResult ENSpecies(string country)
         {
