@@ -17,7 +17,6 @@ namespace Loppuprojekti_MVC.Controllers
     public class SpeciesController : Controller
     {
         private RestUtil _rs = new RestUtil();
-        //PartialView
         IndividualSpeciesViewModel vm = new IndividualSpeciesViewModel();
 
         // GET species, /Species

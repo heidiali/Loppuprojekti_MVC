@@ -65,18 +65,16 @@ namespace Loppuprojekti_MVC.Models
         {
             string json = "";
 
-            using (StreamReader sr = new StreamReader(@"C:\Users\HeidiA\Desktop\GitHub projects\CountryApi\" + isoCode + ".txt"))
+
+            using (StreamReader sr = new StreamReader(@"AdditionalData/CountryApi/" + isoCode + ".txt"))
             {
                 CountryList cl = new CountryList();
                 json = sr.ReadToEnd();
                     CountriesRoot ct;
                     ct = JsonConvert.DeserializeObject<CountriesRoot>(json);
                     return ct.Result;
-                    //return ct.Result;
-
             }
-
-            
+        
         }
     }
 }
